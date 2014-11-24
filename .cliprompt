@@ -1,0 +1,78 @@
+##################################################
+### RVM-specific command line (PS1): show current rvm and gemset, git branch (if any) and put "(svn)" before folder name if in svn folder
+
+function __git_dirty {
+  git diff --quiet HEAD &>/dev/null 
+  [ $? == 1 ] && echo "!"
+}
+
+function __git_ps1 { 
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        printf " (%s)" "${b##refs/heads/}";
+    fi
+}
+
+function __git_branch {
+  __git_ps1 "[%s]"
+}
+
+__rbenv_ps1 ()
+{
+  rbenv_ruby_version=`rbenv version-name`
+  rbenv_ruby_version_short=`rbenv version-name | sed -e 's/-.*//'`
+  echo " $rbenv_ruby_version_short"
+}
+
+function __svn_branch_alt {
+  local branch=$(svn info | grep URL: &> /dev/null)
+  [ "$branch" != "" ] && echo "(svn)"
+}
+
+function __svn_branch {
+  local has_folder=$(ls -a | grep \.svn | awk '{print $1}')
+  [ "$has_folder" == ".svn" ] && echo "(svn)"
+}
+
+bash_prompt() {
+  local NONE="\[\033[0m\]"    # unsets color to term's fg color
+
+  # regular colors
+  local K="\[\033[0;30m\]"    # black
+  local R="\[\033[0;31m\]"    # red
+  local G="\[\033[0;32m\]"    # green
+  local Y="\[\033[0;33m\]"    # yellow
+  local B="\[\033[0;34m\]"    # blue
+  local M="\[\033[0;35m\]"    # magenta
+  local C="\[\033[0;36m\]"    # cyan
+  local W="\[\033[0;37m\]"    # white
+
+  # emphasized (bolded) colors
+  local EMK="\[\033[1;30m\]"
+  local EMR="\[\033[1;31m\]"
+  local EMG="\[\033[1;32m\]"
+  local EMY="\[\033[1;33m\]"
+  local EMB="\[\033[1;34m\]"
+  local EMM="\[\033[1;35m\]"
+  local EMC="\[\033[1;36m\]"
+  local EMW="\[\033[1;37m\]"
+
+  # background colors
+  local BGK="\[\033[40m\]"
+  local BGR="\[\033[41m\]"
+  local BGG="\[\033[42m\]"
+  local BGY="\[\033[43m\]"
+  local BGB="\[\033[44m\]"
+  local BGM="\[\033[45m\]"
+  local BGC="\[\033[46m\]"
+  local BGW="\[\033[47m\]"
+  local UC=$W                 # user's color
+  [ $UID -eq "0" ] && UC=$R   # root's color
+
+  PS1="$EMB\$(__svn_branch)$W[$EMB\w$W]$R\$(__rbenv_ps1)$EMG\$(__git_branch)$EMG\$(__git_dirty)${NONE} $ "  
+  
+}
+
+bash_prompt
+unset bash_prompt
+############## PS1 editing section ends

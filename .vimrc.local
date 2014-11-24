@@ -1,0 +1,39 @@
+set nocursorline " don't highlight current line
+
+" keyboard shortcuts
+inoremap jj <ESC>
+
+" gui settings
+if (&t_Co == 256 || has('gui_running'))
+  if ($TERM_PROGRAM == 'iTerm.app')
+    set background=dark
+    colorscheme solarized
+  else
+    colorscheme desert
+  endif
+endif
+
+filetype off      " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'jgdavey/tslime.vim'
+
+filetype plugin indent on       " required!
+
+let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+" vim-rspec mappings
+map <Leader>f :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>all :call RunAllSpecs()<CR>
+
+" Plugin settings
+let g:ctrlp_show_hidden = 1

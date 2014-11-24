@@ -1,0 +1,20 @@
+# Xcode
+build/*
+*.pbxuser
+*.mode1v3
+*.xcworkspace
+xcuserdata
+
+# Subversion
+.svn
+
+# OS X
+.DS_Store
+
+# Textmate
+*.tmproj
+
+# Ruby
+.bundle/
+*.sass-cache*
+.bundle/gems

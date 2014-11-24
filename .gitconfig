@@ -1,0 +1,17 @@
+[color]
+	ui = auto
+[user]
+	name = Ian Kynnersley
+	email = ian@iankynnersley.co.uk
+[core]
+	editor = /usr/bin/vi
+	excludesfile = /Users/ian/.gitignore_global
+	trustctime = false
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[heroku]
+	account = personal
