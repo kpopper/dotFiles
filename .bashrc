@@ -33,6 +33,9 @@ source ~/.cliprompt
 # Bash Completion
 # This is preventing this file from loading
 #source ~/.bash_completion
+#if [ -f `brew --prefix`/etc/bash_completion ]; then
+#  . `brew --prefix`/etc/bash_completion
+#fi
 
 # rbenv stuff
 eval "$(rbenv init -)"
