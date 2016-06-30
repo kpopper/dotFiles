@@ -3,16 +3,6 @@ set nocursorline " don't highlight current line
 " keyboard shortcuts
 inoremap jj <ESC>
 
-" gui settings
-if (&t_Co == 256 || has('gui_running'))
-  if ($TERM_PROGRAM == 'iTerm.app')
-    set background=dark
-    colorscheme solarized
-  else
-    colorscheme desert
-  endif
-endif
-
 filetype off      " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -37,3 +27,14 @@ map <Leader>all :call RunAllSpecs()<CR>
 
 " Plugin settings
 let g:ctrlp_show_hidden = 1
+
+" gui settings
+if (&t_Co == 256 || has('gui_running'))
+  if ($TERM_PROGRAM == 'iTerm.app')
+    set background=dark
+"    colorscheme solarized
+    colorscheme desert
+  else
+    colorscheme desert
+  endif
+endif

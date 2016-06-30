@@ -17,3 +17,7 @@
 	trustExitCode = true
 [heroku]
 	account = personal
+[fetch]
+	prune = true
+[push]
+	default = simple
