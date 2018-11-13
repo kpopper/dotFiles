@@ -26,6 +26,10 @@ shopt -s checkwinsize
 # set default editor
 export EDITOR=/usr/bin/edit
 
+# chruby initialisation scripts
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
 source ~/.aliases
 source ~/.cliprompt
 
