@@ -69,8 +69,7 @@ bash_prompt() {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$EMB\$(__svn_branch)$W[$EMB\w$W]$R\$(__rbenv_ps1)$EMG\$(__git_branch)$EMG\$(__git_dirty)${NONE} $ "  
-  
+  PS1="$EMB\$(__svn_branch)$W[$EMB\w$W]$EMG\$(__git_branch)$EMG\$(__git_dirty)${NONE} $ "
 }
 
 bash_prompt

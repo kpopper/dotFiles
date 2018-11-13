@@ -4,8 +4,7 @@
 # PATH alterations
 #export SSH_AUTH_SOCK=/Users/ian/.ssh/ssh-agent.pipe
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-export PATH=$HOME/.rbenv/bin:./node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$JAVA_HOME/bin:$HOME/.gem/ruby/1.8/bin:$HOME/bin:$PATH
-export RBENV_ROOT=/usr/local/var/rbenv
+export PATH=./node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$JAVA_HOME/bin:$HOME/.gem/ruby/1.8/bin:$HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/classes.zip
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
@@ -36,6 +35,3 @@ source ~/.cliprompt
 #if [ -f `brew --prefix`/etc/bash_completion ]; then
 #  . `brew --prefix`/etc/bash_completion
 #fi
-
-# rbenv stuff
-eval "$(rbenv init -)"
