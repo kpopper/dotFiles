@@ -30,6 +30,10 @@ export EDITOR=/usr/bin/edit
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+source ~/.npmrc
 source ~/.aliases
 source ~/.cliprompt
 
