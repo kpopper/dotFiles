@@ -11,7 +11,7 @@ alias ti="ruby_test integration"
 alias hgdi="hg diff --color=always --git | less -r"
 alias ll='ls -al'
 alias gs='git status -sb'
-alias gc='git commit -m '
+alias gc='git commit '
 alias gl='git log --oneline --decorate'
 alias hlog='heroku logs --tail --app '
 alias ga='git add -A'
