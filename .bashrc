@@ -40,7 +40,6 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-source ~/.npmrc
 source ~/.aliases
 source ~/.cliprompt
 
