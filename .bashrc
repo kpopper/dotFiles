@@ -3,7 +3,8 @@
 
 # PATH alterations
 #export SSH_AUTH_SOCK=/Users/ian/.ssh/ssh-agent.pipe
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+#export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=./node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$JAVA_HOME/bin:$HOME/.gem/ruby/1.8/bin:$HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/classes.zip
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
@@ -29,6 +30,12 @@ export EDITOR=/usr/bin/edit
 # chruby initialisation scripts
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
+
+chruby ruby-2.6.6
+
+# options to tell ruby-build to use the Homebrew-installed version of OpenSSL
+# NB: without this ruby-build will install OpenSSL for each version of Ruby
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
