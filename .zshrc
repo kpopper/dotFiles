@@ -19,7 +19,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export CLICOLOR=1
 
 # expand functions in the prompt
-#setopt prompt_subst
+setopt prompt_subst
 
 # stop same-line text wrapping - commenting out in ZSH as shopt doesn't appear to be supported
 # shopt -s checkwinsize

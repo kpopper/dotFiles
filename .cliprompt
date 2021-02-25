@@ -5,11 +5,11 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes
 zstyle ':vcs_info:*' stagedstr '!'
 zstyle ':vcs_info:*' unstagedstr '!'
-zstyle ':vcs_info:*' formats '(%b)%u%c'
-zstyle ':vcs_info:*' actionformats '(%b|%a)%u%c'
+zstyle ':vcs_info:*' formats ' (%b)%u%c'
+zstyle ':vcs_info:*' actionformats ' (%b|%a)%u%c'
 
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 #setopt prompt_subst
 
-PS1='[%B%F{250}%2~%f%b] %B%F{240}${vcs_info_msg_0_}%f%b %# '
+PS1='[%B%F{250}%2~%f%b]%B%F{240}${vcs_info_msg_0_}%f%b %# '
