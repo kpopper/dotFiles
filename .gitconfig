@@ -2,7 +2,7 @@
 	ui = auto
 [user]
 	name = Ian Kynnersley
-	email = ian@iankynnersley.co.uk
+	email = ian.kynnersley@thenational.academy
 [core]
 	editor = /usr/bin/vi
 	excludesfile = /Users/ian/.gitignore_global
